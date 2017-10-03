@@ -1,0 +1,66 @@
+<html>
+    <head> 
+        <title>Scheduler</title>
+        <style>
+            td {
+                width: 40px;
+                height: 40px;
+                border: 1px solid black;
+            }
+            #display {
+                margin-top: 10px;
+            }
+            .dropbtn {
+                background-color: #888888;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+            }
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #222222;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            .dropdown-content a:hover {background-color: #f1f1f1}
+            .show {display:block;}
+        </style>
+        <script src="model.js"></script>
+        <script src="view.js"></script>
+        <script src="controller.js"></script>
+    </head>
+    <body>
+        <h1>Scheduler</h1>
+        <div class="dropdown">
+            <button onclick="selectType()" class="dropbtn">Select type</button>
+            <div id="selectionDropdown" class="dropdown-content">
+              <a href="#">Student</a>
+              <a href="#">Teacher</a>
+              <a href="#">Classroom</a>
+            </div>
+          </div>
+    </body>
+    <script>
+        var model = model();
+        var view = view();
+        var controller = controller(view, model);
+        view.control(controller);
+    </script>
+    </html>
