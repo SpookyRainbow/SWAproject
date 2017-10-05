@@ -1,3 +1,4 @@
+/*
 class Teacher{
     constructor(id, name){
         this.id = id;
@@ -68,5 +69,7 @@ cou1.addStudents(stu2);
 cou1.addStudents(stu3);
 
 cou1.toStringCourse();
+*/
+
 
 
