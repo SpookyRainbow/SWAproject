@@ -15,3 +15,33 @@ window.onclick = function(event) {
       }
     }
   }
+
+  
+
+  function displayStudent()
+  {
+    var student_id = parseInt(document.getElementById("studentId").value);
+    var index = listOfStudents.map(function(el) {
+      return el.id;
+    }).indexOf(student_id);
+    if (index == -1)
+      {
+        document.getElementById("number").innerHTML = "No student found";
+      }
+    else 
+      {
+        document.getElementById("number").innerHTML = listOfStudents[index].getInfo();
+      }
+  }
+
+  
+/*
+  function displayTeacher(id)
+  {
+
+  }
+
+  function displayClassroom(id)
+  {
+
+  }*/
