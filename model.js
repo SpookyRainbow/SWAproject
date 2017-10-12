@@ -1,11 +1,16 @@
 
 class Teacher{
-    constructor(id, name){
+    constructor(id, name, course){
         this.id = id;
         this.name = name;
+        this.course = null;
     }
         getInfo(){
             return "Teacher:" +  this.id + ' ' + this.name;
+        }
+
+        changeCourse(obj){
+            this.course = obj;
         }
     
 }
@@ -14,10 +19,15 @@ class Student{
     constructor(id, name){
         this.id = id;
         this.name = name;
+        this.course = [];
     }
 
     getInfo(){
         return "Student:" +  this.id + ' ' + this.name;
+    }
+
+    addCourse(obj){
+        this.course.push(obj)
     }
 }
 
@@ -31,11 +41,11 @@ class Classroom{
 }
 
 class Course{
-    constructor(id,subject,time,date,teacher,classroom){
+    constructor(id,subject,time,day,teacher,classroom){
         this.id = id;
         this.subject = subject;
         this.time = time;
-        this.date = date;
+        this.day = day;
         this.students = [];
         this.teacher = teacher;
         this.classroom = classroom
@@ -46,12 +56,19 @@ class Course{
     }
 
     toStringCourse(){
-        console.log(this.id + " " + this.subject + " " + this.time + " " + this.date + " " + this.teacher.getInfo() + " " + this.classroom.getInfo());
+        console.log(this.id + " " + this.subject + " " + this.time + " " + this.day + " " + this.teacher.getInfo() + " " + this.classroom.getInfo());
         for(var i =  0; i < this.students.length; i++){
             console.log(this.students[i].getInfo());
         }
 
     }
+
+
+}
+
+function getStudentInfo(id){
+
+
 }
 
 
@@ -63,10 +80,18 @@ tea1 = new Teacher(1,"Henry");
 
 class1 = new Classroom(25);
 
-cou1 = new Course(1,"JavaScript","15:30","12/01",tea1,class1)
+cou1 = new Course(1,"JavaScript","15:30","Monday",tea1,class1)
 cou1.addStudents(stu1);
+stu1.addCourse(cou1);
+
 cou1.addStudents(stu2);
+stu2.addCourse(cou1);
+
 cou1.addStudents(stu3);
+stu3.addCourse(cou1);
+
+tea1.changeCourse(cou1);
+
 
 cou1.toStringCourse();
 
