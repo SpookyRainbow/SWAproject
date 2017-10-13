@@ -1,17 +1,32 @@
 <html>
     <head>
         <title>Student - Display Schedule</title>
-        <style></style>
+        <style>
+        body {
+                background-color: #CCCCCC;
+        }
+        h1 {
+                font-family: Courier New, Courier, monospace;
+        }
+        .center {
+                margin: auto;
+                width: 60%;
+                padding: 10px;
+                text-align: center;
+        }
+        </style>
         <script src="model.js"></script>
         <script src="view.js"></script>
         <script src="controller.js"></script>
     </head>
     <body>
+        <div class="center">
         <h1>Student - Display Schedule</h1>
             Student ID:<br>
             <input type="text" id="studentId">
             <br>
             <button onclick="displayStudent()">Submit</button>
             <p id=number></p>
+        </div>
     </body>
 </html>

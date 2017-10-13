@@ -1,7 +1,19 @@
 <html>
     <head> 
-        <title>Scheduler</title>
+        <title>VIA University College</title>
         <style>
+            body {
+                background-color: #CCCCCC;
+            }
+            h1 {
+                font-family: Courier New, Courier, monospace;
+            }
+            .center {
+                margin: auto;
+                width: 60%;
+                padding: 10px;
+                text-align: center;
+            }
             td {
                 width: 40px;
                 height: 40px;
@@ -47,7 +59,8 @@
         <script src="controller.js"></script>
     </head>
     <body>
-        <h1>Scheduler</h1>
+        <div class="center">
+        <h1>UniSchedule</h1>
         <div class="dropdown">
             <button onclick="selectType()" class="dropbtn">Select type</button>
             <div id="selectionDropdown" class="dropdown-content">
@@ -56,6 +69,7 @@
               <a href="classroom.html">Classroom</a>
             </div>
           </div>
+        </div>
     </body>
     <!--<script>
         var model = model();
