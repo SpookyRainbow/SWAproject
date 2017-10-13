@@ -24,6 +24,9 @@ window.onclick = function(event) {
     var index = listOfStudents.map(function(el) {
       return el.id;
     }).indexOf(student_id);
+    var courseindex = listOfCourses.map(function(el) {
+      return el.id;
+    }).indexOf(student_id);
     if (index == -1)
       {
         document.getElementById("number").innerHTML = "No student found";
@@ -32,8 +35,15 @@ window.onclick = function(event) {
       {
         document.getElementById("number").innerHTML = listOfStudents[index].getInfo();
       }
+    if (courseindex == -1)
+      {
+          document.getElementById("course").innerHTML = "No courses found";
+      }
+    else 
+      {
+          document.getElementById("course").innerHTML = listOfCourses[index].getInfo();
+      }
   }
-
   
 
   function displayTeacher()

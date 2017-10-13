@@ -63,10 +63,9 @@ class Course{
 
     }
 
-
-}
-
-function getStudentInfo(id){
+    getInfo(){
+        return "Subject:" + this.subject + " || Time:" + this.time + " || Day:" + this.day; + " || Teacher:" + this.teacher;
+    }
 
 
 }
@@ -83,10 +82,10 @@ class1 = new Classroom(25);
 cou1 = new Course(1,"JavaScript","15:30","Monday",tea1,class1)
 cou1.addStudents(stu1);
 stu1.addCourse(cou1);
-
+/*
 cou1.addStudents(stu2);
 stu2.addCourse(cou1);
-
+*/
 cou1.addStudents(stu3);
 stu3.addCourse(cou1);
 
@@ -95,6 +94,7 @@ tea1.changeCourse(cou1);
 var listOfStudents = [stu1, stu2, stu3];
 var listOfTeachers = [tea1];
 var listOfClassrooms = [class1];
+var listOfCourses = [cou1];
 
 cou1.toStringCourse();
 
