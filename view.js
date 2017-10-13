@@ -2,8 +2,8 @@ function selectType() {
     document.getElementById("selectionDropdown").classList.toggle("show");
 }
 
-function selectAddType() {
-  document.getElementById("selectionAddDropdown").classList.toggle("show");
+function selectCreateType() {
+  document.getElementById("selectionCreateDropdown").classList.toggle("show");
 }
 
 window.onclick = function(event) {
