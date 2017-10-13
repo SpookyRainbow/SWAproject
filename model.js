@@ -93,6 +93,9 @@ function addTeacher(id,name){
     listOfTeachers.push(new Teacher(id,name,null));
 }
 
+function addStudent(id,name){
+    listOfStudents.push(new Student(id,name));
+}
 
 stu1 = new Student(1,"Bob");
 stu2 = new Student(2,"Joe");

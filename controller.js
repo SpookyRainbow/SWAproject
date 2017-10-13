@@ -42,3 +42,37 @@ function checkTeacher(){
     }
 
 }
+
+function checkStudentID(id){
+    if (id === parseInt(id, 10)){
+        alert("Not added");
+        return false;
+    }
+    else if(id === listOfStudents.map(function(el) {return el.id;}).indexOf(id)){
+        alert("Not added");
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function checkStudentName(name){
+    if(name != null && typeof name === "string"){
+        return true
+    }else
+    {
+        alert("Not added");
+        return false
+    }
+}
+
+
+function checkStudent(){
+    var Student_id = document.getElementById("StudentId").value;
+    var Student_name = document.getElementById("StudentName").value;
+    if(checkStudentID(Student_id) === true && checkStudentName(Student_name) === true){
+        addStudent(Student_id,Student_name);
+        alert(" Added " + Student_id + " " + Student_name)
+    }
+
+}
