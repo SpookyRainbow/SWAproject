@@ -93,6 +93,8 @@ stu3.addCourse(cou1);
 tea1.changeCourse(cou1);
 
 var listOfStudents = [stu1, stu2, stu3];
+var listOfTeachers = [tea1];
+var listOfClassrooms = [class1];
 
 cou1.toStringCourse();
 

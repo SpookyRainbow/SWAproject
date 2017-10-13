@@ -35,13 +35,35 @@ window.onclick = function(event) {
   }
 
   
-/*
-  function displayTeacher(id)
-  {
 
+  function displayTeacher()
+  {
+    var teacher_id = parseInt(document.getElementById("teacherId").value);
+    var index = listOfTeachers.map(function(el) {
+      return el.id;
+    }).indexOf(teacher_id);
+    if (index == -1)
+      {
+        document.getElementById("number").innerHTML = "No teacher found";
+      }
+    else 
+      {
+        document.getElementById("number").innerHTML = listOfTeachers[index].getInfo();
+      }
   }
 
-  function displayClassroom(id)
+  function displayClassroom()
   {
-
-  }*/
+    var classroom_id = parseInt(document.getElementById("classroomId").value);
+    var index = listOfClassrooms.map(function(el) {
+      return el.id;
+    }).indexOf(classroom_id);
+    if (index == -1)
+      {
+        document.getElementById("number").innerHTML = "No classroom found";
+      }
+    else 
+      {
+        document.getElementById("number").innerHTML = listOfClassrooms[index].getInfo();
+      }
+  }
