@@ -2,6 +2,10 @@ function selectType() {
     document.getElementById("selectionDropdown").classList.toggle("show");
 }
 
+function selectAddType() {
+  document.getElementById("selectionAddDropdown").classList.toggle("show");
+}
+
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
   
@@ -24,24 +28,13 @@ window.onclick = function(event) {
     var index = listOfStudents.map(function(el) {
       return el.id;
     }).indexOf(student_id);
-    var courseindex = listOfCourses.map(function(el) {
-      return el.id;
-    }).indexOf(student_id);
     if (index == -1)
       {
         document.getElementById("number").innerHTML = "No student found";
       }
     else 
       {
-        document.getElementById("number").innerHTML = listOfStudents[index].getInfo();
-      }
-    if (courseindex == -1)
-      {
-          document.getElementById("course").innerHTML = "No courses found";
-      }
-    else 
-      {
-          document.getElementById("course").innerHTML = listOfCourses[index].getInfo();
+        document.getElementById("number").innerHTML = listOfStudents[index].getStudentInfo();
       }
   }
   
@@ -62,18 +55,20 @@ window.onclick = function(event) {
       }
   }
 
-  function displayClassroom()
+  function displayCourse()
   {
-    var classroom_id = parseInt(document.getElementById("classroomId").value);
-    var index = listOfClassrooms.map(function(el) {
+    var course_id = parseInt(document.getElementById("courseId").value);
+    var index = listOfCourses.map(function(el) {
       return el.id;
-    }).indexOf(classroom_id);
+    }).indexOf(course_id);
+    //console.log(el.id);
     if (index == -1)
       {
-        document.getElementById("number").innerHTML = "No classroom found";
+        console.log(course_id);
+        document.getElementById("number").innerHTML = "No course found";
       }
     else 
       {
-        document.getElementById("number").innerHTML = listOfClassrooms[index].getInfo();
+        document.getElementById("number").innerHTML = listOfCourses[index].getCourseInfo();
       }
   }
