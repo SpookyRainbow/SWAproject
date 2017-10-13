@@ -12,6 +12,8 @@ class Teacher{
         changeCourse(obj){
             this.course = obj;
         }
+
+        
     
 }
 
@@ -85,6 +87,10 @@ class Course{
     }
 
 
+}
+
+function addTeacher(id,name){
+    listOfTeachers.push(new Teacher(id,name,null));
 }
 
 

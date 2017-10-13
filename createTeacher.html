@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Create - Create</title>
+        <style>
+        body {
+                background-color: #CCCCCC;
+        }
+        h1 {
+                font-family: Courier New, Courier, monospace;
+        }
+        .center {
+                margin: auto;
+                width: 60%;
+                padding: 10px;
+                text-align: center;
+        }
+        </style>
+        <script src="model.js"></script>
+        <script src="view.js"></script>
+        <script src="controller.js"></script>
+    </head>
+    <body>
+        <div class="center">
+        <h1>Teacher - Create</h1>
+            Teacher ID:
+            <input type="text" id="teacherId">
+            <br>
+            Teacher Name:
+            <input type="text" id="teacherName">
+            <br>
+            <button onclick="checkTeacher()">Create Teacher</button>
+            <p id=number></p>
+            <p id=course></p>
+        </div>
+    </body>
+</html>
