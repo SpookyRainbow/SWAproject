@@ -5,7 +5,8 @@ var refStudents = database.ref('Students');
 
 refTeachers.on('value', getTeachersFromDB, error);
 refStudents.on('value', getStudentsFromDB, error);
-var listOfStudents = []; 
+var listOfStudents = [];
+var listOfTeachers = []; 
 
 
 class Teacher{
@@ -104,35 +105,37 @@ class Course{
 
 function addTeacher(id,name){
     refTeachers.push(new Teacher(id,name,null));
-    listOfTeachers.push(new Teacher(id,name,null));
-    
-    
-    
+    listOfTeachers.push(new Teacher(id,name,null));    
 }
 
 function addStudent(id,name){
-    refStudents.push(new Student(id,name));   
-    var listOfStudents = [];   
+    refStudents.push(new Student(id,name));     
     listOfStudents.push(new Student(id,name));
 }
 
 function getTeachersFromDB(data){
-   // console.log(data.val());
-    var teachers = data.val();
-    var Tkeys = Object.keys(teachers);  //array of teachers from DB
-    //console.log(Tkeys);
+   //console.log(data.val());
+   var teachers = data.val();
+   var Skeys = Object.keys(teachers);
+   //console.log(Skeys);
+   for (var i = 0; i < Skeys.length; i++){
+       var k = Skeys[i];
+       //console.log(teachers[k]);
+       listOfTeachers.push(teachers[k]);
+       //console.log(listOfTeachers[i]);
+   }
 }
 
 function getStudentsFromDB(data){
-  console.log(data.val());
+  //console.log(data.val());
   var students = data.val();
   var Skeys = Object.keys(students);  //array of students from DB
-  console.log(Skeys);
+  //console.log(Skeys);
   for (var i = 0; i < Skeys.length; i++){
       var k = Skeys[i];
-      console.log(students[k]);
+      //console.log(students[k]);
       listOfStudents.push(students[k]);
-      console.log(listOfStudents[i]);
+      //console.log(listOfStudents[i]);
 
   }
 }
@@ -143,5 +146,6 @@ function error(err){
 }
 
 getStudentsFromDB();
+getTeachersFromDB();
 
  
