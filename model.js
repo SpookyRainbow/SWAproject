@@ -5,6 +5,7 @@ var refStudents = database.ref('Students');
 
 refTeachers.on('value', getTeachersFromDB, error);
 refStudents.on('value', getStudentsFromDB, error);
+var listOfStudents = []; 
 
 
 class Teacher{
@@ -46,6 +47,10 @@ class Student{
             cou += " </br> " + this.course[i].getInfo();
         }
         return this.id + " " + this.name + " " + cou;
+    }
+
+    getStudentId(){
+        return this.id;
     }
 
 }
@@ -107,6 +112,7 @@ function addTeacher(id,name){
 
 function addStudent(id,name){
     refStudents.push(new Student(id,name));   
+    var listOfStudents = [];   
     listOfStudents.push(new Student(id,name));
 }
 
@@ -118,13 +124,24 @@ function getTeachersFromDB(data){
 }
 
 function getStudentsFromDB(data){
-  //  console.log(data.val());
+  console.log(data.val());
   var students = data.val();
   var Skeys = Object.keys(students);  //array of students from DB
-  //console.log(Skeys);
+  console.log(Skeys);
+  for (var i = 0; i < Skeys.length; i++){
+      var k = Skeys[i];
+      console.log(students[k]);
+      listOfStudents.push(students[k]);
+      console.log(listOfStudents[i]);
+
+  }
 }
 
 function error(err){
     console.log('Error!');
     console.log(err);
 }
+
+getStudentsFromDB();
+
+ 

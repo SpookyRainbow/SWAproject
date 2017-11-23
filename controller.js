@@ -44,6 +44,7 @@ function checkTeacher(){
 
 }
 
+
 function checkStudentID(id){
     if (id === parseInt(id, 10)){
         alert("Not added");

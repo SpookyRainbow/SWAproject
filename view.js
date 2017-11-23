@@ -25,6 +25,7 @@ window.onclick = function(event) {
   function displayStudent()
   {
     var student_id = parseInt(document.getElementById("studentId").value);
+    var listOfStudents = getStudentsFromDB();
     var index = listOfStudents.map(function(el) {
       return el.id;
     }).indexOf(student_id);
@@ -36,6 +37,13 @@ window.onclick = function(event) {
       {
         document.getElementById("number").innerHTML = listOfStudents[index].getStudentInfo();
       }
+  }
+
+  function displayStudent()
+  {
+    var student_id = parseInt(document.getElementById("studentId").value);
+    document.getElementById("number").innerHTML = getStudentsFromDB(student_id);
+      
   }
   
 
