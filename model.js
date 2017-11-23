@@ -1,4 +1,12 @@
 
+var database = firebase.database();
+var refTeachers = database.ref('Teachers');
+var refStudents = database.ref('Students');
+
+refTeachers.on('value', getTeachersFromDB, error);
+refStudents.on('value', getStudentsFromDB, error);
+
+
 class Teacher{
     constructor(id, name, course){
         this.id = id;
@@ -90,12 +98,38 @@ class Course{
 }
 
 function addTeacher(id,name){
+    refTeachers.push(new Teacher(id,name,null));
     listOfTeachers.push(new Teacher(id,name,null));
+    
+    
+    
 }
 
 function addStudent(id,name){
+    refStudents.push(new Student(id,name));   
     listOfStudents.push(new Student(id,name));
 }
+
+function getTeachersFromDB(data){
+   // console.log(data.val());
+    var teachers = data.val();
+    var Tkeys = Object.keys(teachers);  //array of teachers from DB
+    //console.log(Tkeys);
+}
+
+function getStudentsFromDB(data){
+  //  console.log(data.val());
+  var students = data.val();
+  var Skeys = Object.keys(students);  //array of students from DB
+  //console.log(Skeys);
+}
+
+function error(err){
+    console.log('Error!');
+    console.log(err);
+}
+
+
 
 stu1 = new Student(1,"Bob");
 stu2 = new Student(2,"Joe");
@@ -136,8 +170,3 @@ var listOfCourses = [cou1, cou2];
 
 
 //cou1.toStringCourse();
-
-
-
-
-

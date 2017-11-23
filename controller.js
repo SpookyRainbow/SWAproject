@@ -15,9 +15,10 @@ function checkTeacherID(id){
         return false;
     }
     else if(id === listOfTeachers.map(function(el) {return el.id;}).indexOf(id)){
-        alert("Not added");
-        return false;
-    }else{
+      alert("Not added");
+        return false;}
+    
+    else{
         return true;
     }
 }
@@ -50,8 +51,8 @@ function checkStudentID(id){
     }
     else if(id === listOfStudents.map(function(el) {return el.id;}).indexOf(id)){
         alert("Not added");
-        return false;
-    }else{
+        return false;    }
+    else{
         return true;
     }
 }
