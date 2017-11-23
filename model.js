@@ -2,11 +2,14 @@
 var database = firebase.database();
 var refTeachers = database.ref('Teachers');
 var refStudents = database.ref('Students');
+var refCourses = database.ref('Courses');
 
 refTeachers.on('value', getTeachersFromDB, error1);
 refStudents.on('value', getStudentsFromDB, error2);
+refCourses.on('value', getCoursesFromDB, error3);
 var listOfStudents = [];
 var listOfTeachers = [];
+var listOfCourses = [];
 
 
 class Teacher{
@@ -130,6 +133,8 @@ function addStudent(id,name){
 }
 
 
+
+
 function getStudentsFromDB(data){
     console.log(data.val());
     var students = data.val();
@@ -157,6 +162,19 @@ function getTeachersFromDB(data){
    }
 }
 
+function getCoursesFromDB(data){
+    console.log(data.val());
+    var courses = data.val();
+    var Skeys = Object.keys(courses);
+    console.log(Skeys);
+    for (var i = 0; i < Skeys.length; i++){
+        var k = Skeys[i];
+        console.log(courses[k]);
+        listOfCourses.push(courses[k]);
+        console.log(listOfCourses[i]);
+    }
+ }
+
 
 function error1(err){
     console.log('Error!');
@@ -168,5 +186,11 @@ function error2(err){
     console.log(err);
 }
 
+function error3(err){
+    console.log('Error!');
+    console.log(err);
+}
+
 getStudentsFromDB();
 getTeachersFromDB();
+getCoursesFromDB();

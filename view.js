@@ -68,6 +68,6 @@ window.onclick = function(event) {
       }
     else 
       {
-        document.getElementById("number").innerHTML = listOfCourses[index].getCourseInfo();
+        document.getElementById("number").innerHTML = listOfCourses[index].name + " " + listOfCourses[index].time;
       }
   }

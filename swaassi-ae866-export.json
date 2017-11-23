@@ -1,0 +1,83 @@
+{
+  "Courses" : {
+    "Course1" : {
+      "id" : 1,
+      "name" : "SWA",
+      "students" : [ 12, 15 ],
+      "teacher" : 2,
+      "time" : "15:30"
+    }
+  },
+  "Students" : {
+    "-Kzci2D7PLxj-zidZpB1" : {
+      "id" : 12,
+      "name" : "aaa"
+    },
+    "-KzcjAw3hHZ-sv0Ab4TF" : {
+      "id" : 15,
+      "name" : "name"
+    },
+    "-KzclTBBKzggtujtG8uc" : {
+      "id" : 12345,
+      "name" : "Another Test"
+    },
+    "-KzcmvB2vyCLy6k8JSSo" : {
+      "id" : 15432,
+      "name" : "Test4"
+    },
+    "-Kzd3vKPx31Xx9bTpE0-" : {
+      "id" : 425,
+      "name" : "rezsdfg"
+    },
+    "-KzdMwYdnMkzztiSGpDk" : {
+      "id" : 107,
+      "name" : "NumberTest"
+    },
+    "-KzdPkXXOYdy1-H9ngOr" : {
+      "id" : 789,
+      "name" : "Student Works"
+    },
+    "-KzeYQugYjRrz2_mg39V" : {
+      "id" : 2556,
+      "name" : "ololo"
+    }
+  },
+  "Teachers" : {
+    "-KzZFqjaXGKP6Wg0-8fV" : {
+      "id" : 2,
+      "name" : "Juraj"
+    },
+    "-KzZJq6D5xG8QQGEU2K9" : {
+      "id" : 3,
+      "name" : "Juraj"
+    },
+    "-Kzd3hPv0EtVNo2lG--F" : {
+      "id" : 4,
+      "name" : "ljmlmgegeggge"
+    },
+    "-KzdM8kB70Sm_MGTwjC-" : {
+      "id" : 175,
+      "name" : "dsafdsa"
+    },
+    "-KzdMuRtJa6FaKFCNnRL" : {
+      "id" : 108,
+      "name" : "NumberTest"
+    },
+    "-KzdOIbfvMhGDuUYx5jD" : {
+      "id" : 108,
+      "name" : "AlertTest"
+    },
+    "-KzdP7cMygE7TH_T0iU_" : {
+      "id" : 508,
+      "name" : "WOooooow"
+    },
+    "-KzdPnxmI3vo1i3mTDxD" : {
+      "id" : 790,
+      "name" : "Teacher Works"
+    },
+    "-Kzej2czUXpqMKBbDCQE" : {
+      "id" : 44,
+      "name" : "yyy"
+    }
+  }
+}
