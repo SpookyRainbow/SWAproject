@@ -39,7 +39,7 @@ function checkTeacher(){
     var teacher_name = document.getElementById("teacherName").value;
     if(checkTeacherID(teacher_id) === true && checkTeacherName(teacher_name) === true){
         addTeacher(teacher_id,teacher_name);
-        alert(" Added " + teacher_id + " " + teacher_name)
+        //alert(" Added " + teacher_id + " " + teacher_name)
     }
 
 }
@@ -74,7 +74,7 @@ function checkStudent(){
     var Student_name = document.getElementById("StudentName").value;
     if(checkStudentID(Student_id) === true && checkStudentName(Student_name) === true){
         addStudent(Student_id,Student_name);
-        alert(" Added " + Student_id + " " + Student_name)
+        //alert(" Added " + Student_id + " " + Student_name)
     }
 
 }

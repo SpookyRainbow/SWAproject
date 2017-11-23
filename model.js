@@ -6,12 +6,12 @@ var refStudents = database.ref('Students');
 refTeachers.on('value', getTeachersFromDB, error1);
 refStudents.on('value', getStudentsFromDB, error2);
 var listOfStudents = [];
-var listOfTeachers = []; 
+var listOfTeachers = [];
 
 
 class Teacher{
     constructor(id, name, course){
-        this.id = id;
+        this.id = Number(id);
         this.name = name;
         this.course = null;
     }
@@ -23,13 +23,13 @@ class Teacher{
             this.course = obj;
         }
 
-        
-    
+
+
 }
 
 class Student{
     constructor(id, name){
-        this.id = id;
+        this.id = Number(id);
         this.name = name;
         this.course = [];
     }
@@ -104,30 +104,46 @@ class Course{
 }
 
 function addTeacher(id,name){
-    refTeachers.push(new Teacher(id,name));
-    listOfTeachers.push(new Teacher(id,name));    
+    if (id != 0 || name != "")
+    {
+        refTeachers.push(new Teacher(id,name));
+        listOfTeachers.push(new Teacher(id,name));
+        alert("Successfully added!"); 
+    }
+    else
+    {
+        alert("Something went wrong!");
+    }
 }
 
 function addStudent(id,name){
-    refStudents.push(new Student(id,name));     
-    listOfStudents.push(new Student(id,name));
+    if (id != 0 || name != "")
+    {
+        refStudents.push(new Student (id,name));
+        listOfStudents.push(new Student(id,name));
+        alert("Successfully added!")
+    }
+    else
+    {
+        alert("Something went wrong!");
+    }
 }
 
 
 function getStudentsFromDB(data){
-    //console.log(data.val());
+    console.log(data.val());
     var students = data.val();
     var Skeys = Object.keys(students);  //array of students from DB
-    //console.log(Skeys);
+    console.log(Skeys);
     for (var i = 0; i < Skeys.length; i++){
         var k = Skeys[i];
-        //console.log(students[k]);
+        console.log(students[k]);
         listOfStudents.push(students[k]);
-        //console.log(listOfStudents[i]);
-  
+        console.log(listOfStudents[i]);
+
     }
   }
-  
+
 function getTeachersFromDB(data){
    console.log(data.val());
    var teachers = data.val();
@@ -154,5 +170,3 @@ function error2(err){
 
 getStudentsFromDB();
 getTeachersFromDB();
-
- 

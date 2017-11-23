@@ -35,7 +35,6 @@ window.onclick = function(event) {
     else 
       {
         document.getElementById("numberStudent").innerHTML = listOfStudents[index].name;
-        alert(listOfStudents[index].name);
       }
   }
 
