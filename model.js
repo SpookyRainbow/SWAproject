@@ -3,8 +3,8 @@ var database = firebase.database();
 var refTeachers = database.ref('Teachers');
 var refStudents = database.ref('Students');
 
-refTeachers.on('value', getTeachersFromDB, error);
-refStudents.on('value', getStudentsFromDB, error);
+refTeachers.on('value', getTeachersFromDB, error1);
+refStudents.on('value', getStudentsFromDB, error2);
 var listOfStudents = [];
 var listOfTeachers = []; 
 
@@ -104,8 +104,8 @@ class Course{
 }
 
 function addTeacher(id,name){
-    refTeachers.push(new Teacher(id,name,null));
-    listOfTeachers.push(new Teacher(id,name,null));    
+    refTeachers.push(new Teacher(id,name));
+    listOfTeachers.push(new Teacher(id,name));    
 }
 
 function addStudent(id,name){
@@ -113,34 +113,41 @@ function addStudent(id,name){
     listOfStudents.push(new Student(id,name));
 }
 
+
+function getStudentsFromDB(data){
+    //console.log(data.val());
+    var students = data.val();
+    var Skeys = Object.keys(students);  //array of students from DB
+    //console.log(Skeys);
+    for (var i = 0; i < Skeys.length; i++){
+        var k = Skeys[i];
+        //console.log(students[k]);
+        listOfStudents.push(students[k]);
+        //console.log(listOfStudents[i]);
+  
+    }
+  }
+  
 function getTeachersFromDB(data){
-   //console.log(data.val());
+   console.log(data.val());
    var teachers = data.val();
    var Skeys = Object.keys(teachers);
-   //console.log(Skeys);
+   console.log(Skeys);
    for (var i = 0; i < Skeys.length; i++){
        var k = Skeys[i];
-       //console.log(teachers[k]);
+       console.log(teachers[k]);
        listOfTeachers.push(teachers[k]);
-       //console.log(listOfTeachers[i]);
+       console.log(listOfTeachers[i]);
    }
 }
 
-function getStudentsFromDB(data){
-  //console.log(data.val());
-  var students = data.val();
-  var Skeys = Object.keys(students);  //array of students from DB
-  //console.log(Skeys);
-  for (var i = 0; i < Skeys.length; i++){
-      var k = Skeys[i];
-      //console.log(students[k]);
-      listOfStudents.push(students[k]);
-      //console.log(listOfStudents[i]);
 
-  }
+function error1(err){
+    console.log('Error!');
+    console.log(err);
 }
 
-function error(err){
+function error2(err){
     console.log('Error!');
     console.log(err);
 }

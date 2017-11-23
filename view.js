@@ -24,42 +24,35 @@ window.onclick = function(event) {
 
   function displayStudent()
   {
-    var student_id = parseInt(document.getElementById("studentId").value);
+    var student_id = parseInt(document.getElementById("DisstudentId").value);
     var listOfStudents = getStudentsFromDB();
     var index = listOfStudents.map(function(el) {
       return el.id;
     }).indexOf(student_id);
     if (index == -1)
       {
-        document.getElementById("number").innerHTML = "No student found";
+        document.getElementById("numberStudent").innerHTML = "No student found";
       }
     else 
       {
-        document.getElementById("number").innerHTML = listOfStudents[index].getStudentInfo();
+        document.getElementById("numberStudent").innerHTML = listOfStudents[index].getStudentInfo();
+        alert(listOfStudents[index].getStudentInfo());
       }
   }
 
-  function displayStudent()
-  {
-    var student_id = parseInt(document.getElementById("studentId").value);
-    document.getElementById("number").innerHTML = getStudentsFromDB(student_id);
-      
-  }
-  
-
   function displayTeacher()
   {
-    var teacher_id = parseInt(document.getElementById("teacherId").value);
+    var teacher_id = parseInt(document.getElementById("DisteacherId").value);
     var index = listOfTeachers.map(function(el) {
       return el.id;
     }).indexOf(teacher_id);
     if (index == -1)
       {
-        document.getElementById("number").innerHTML = "No teacher found";
+        document.getElementById("numberTeacher").innerHTML = "No teacher found";
       }
     else 
       {
-        document.getElementById("number").innerHTML = listOfTeachers[index].getInfo();
+        document.getElementById("numberTeacher").innerHTML = listOfTeachers[index].name;
       }
   }
 
